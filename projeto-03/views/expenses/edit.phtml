@@ -1,0 +1,40 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'; ?>
+
+<div class="container">
+    <div class="col-md-12">
+        <h1>Editar Despesa</h1>
+        <hr>
+    </div>
+    
+    <div class="col-md-12">
+        <form method="post" action="<?= HOME ?>/myexpenses/edit/<?= $this->expense['id']; ?>">
+            <div class="form-group">
+                <label for="value">Valor</label>
+                <input type="text" class="form-control" id="value" name="value" value="<?= $this->expense['value']; ?>" placeholder="Valor Gasto">
+            </div>
+
+            <div class="form-group">
+                <label for="categories_id">Categoria</label>
+                <select name="categories_id" id="categories_id">
+                    <?php foreach($this->categories as $c): ?>
+                        <option <?= $c['id'] == $this->expense['categories_id'] ? 'selected' : '' ?>
+                            value="<?= $c['id'] ?>"><?= $c['name'] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição</label>
+                <textarea
+                    name="description"
+                    id="description"
+                    cols="30"
+                    rows="10"
+                    class="form-control"><?= $this->expense['description']; ?></textarea>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg pull-right">Atualizar Despesa</button>
+        </form>
+    </div>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'; ?>

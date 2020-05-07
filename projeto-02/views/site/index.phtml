@@ -1,0 +1,21 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'; ?>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Bem Vindo ao projeto 02</h1>
+        <p>Projeto criado no curso PHP Orientado a Objetos</p>
+    </div>
+
+    <div class="col-cd-12">
+        <?php foreach($this->products as $product): ?>
+            <div class="col-md-4">
+                <img src="https://via.placeholder.com/350x150?text=<?= $product['name'] ?>" alt="" class="img-responsive">
+                <h2><a href="<?= HOME ?>/product/<?= $product['id'] ?>"><?= $product['name'] ?></a></h2>
+                <p><?= $product['description'] ?></p>
+                <p><?= number_format($product['price'], 2, ',', '.') ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'; ?>

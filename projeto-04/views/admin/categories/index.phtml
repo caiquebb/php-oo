@@ -1,0 +1,44 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'; ?>
+
+<div class="container">
+    <div class="col-md-12">
+        <h1>
+            Categorias <small>gerencie suas categorias</small>
+            <a href="<?= HOME ?>/categories/new" class="btn btn-default pull-right">Cadastrar Nova Categoria</a>
+        </h1>
+        
+        <hr>
+    </div>
+
+    <div class="col-md-12">
+        <?php require VIEWS_PATH . 'includes/messages.phtml'; ?>
+    </div>
+
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Criado em</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($this->categories as $c) : ?>
+                <tr>
+                    <td><?= $c['id'] ?></td>
+                    <td><?= $c['name'] ?></td>
+                    <td><?= date('d/m/Y H:i:s', strtotime($c['created_at'])) ?></td>
+                    <td>
+                        <a href="<?= HOME ?>/categories/edit/<?= $c['id'] ?>" class="btn btn-default">Editar</a>
+                        <a href="<?= HOME ?>/categories/remove/<?= $c['id'] ?>" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'; ?>

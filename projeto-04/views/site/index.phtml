@@ -1,0 +1,33 @@
+<?php require VIEWS_PATH . 'includes/header.phtml'; ?>
+
+<div class="container">
+    
+    <div class="jumbotron">
+        <h1>Blog</h1>
+        <p>Projeto 04 criado no curso PHP Orientado a Objetos</p>
+    </div>
+    
+    <div class="col-md-12">
+        <?php require VIEWS_PATH . 'includes/messages.phtml'; ?>
+    </div>
+
+    <div class="col-md-12">
+        <div class="nav nav-pills">
+            <?php foreach($this->categories as $c) : ?>
+                <li><a href="<?= HOME . '/category/' . $c['slug'] ?>"><?= $c['name'] ?></a></li>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <?php foreach($this->posts as $p) : ?>
+            <div class="col-md-4">
+                <h2><a href="<?= HOME . '/post/' . $p['slug'] ?>"><?= $p['title'] ?></a></h2>
+                <small>Criado em <?= date('d/M/Y H:i:s', strtotime($p['created_at'])) ?></small>
+                <p><?= $p['description'] ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<?php require VIEWS_PATH . 'includes/footer.phtml'; ?>

@@ -1,0 +1,59 @@
+[
+    {
+        "name": "ausi/slug-generator",
+        "version": "v1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ausi/slug-generator.git",
+            "reference": "59b641dfa764658e1fbf37f75312e702817cd319"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ausi/slug-generator/zipball/59b641dfa764658e1fbf37f75312e702817cd319",
+            "reference": "59b641dfa764658e1fbf37f75312e702817cd319",
+            "shasum": ""
+        },
+        "require": {
+            "ext-intl": "*",
+            "ext-mbstring": "*",
+            "ext-pcre": "*",
+            "lib-icu": ">=4.2.1",
+            "php": "^7.1"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "^2.4",
+            "php-coveralls/php-coveralls": "^2.0",
+            "phpunit/phpunit": "^7.0"
+        },
+        "time": "2018-12-11T20:59:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ausi\\SlugGenerator\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Martin Auswöger",
+                "email": "martin@auswoeger.com"
+            }
+        ],
+        "description": "Slug Generator",
+        "keywords": [
+            "ascii",
+            "cldr",
+            "pretty-url",
+            "slug",
+            "slug-generator",
+            "slugify",
+            "transliteration",
+            "unicode"
+        ]
+    }
+]
